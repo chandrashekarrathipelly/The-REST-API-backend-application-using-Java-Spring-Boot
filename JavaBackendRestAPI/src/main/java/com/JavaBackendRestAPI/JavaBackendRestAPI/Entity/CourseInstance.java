@@ -11,17 +11,17 @@ public class CourseInstance {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String year_of_delivery;
-    private String semester_of_delivery;
+    private String year;
+    private String semester;
     private String course_id;
 
     public CourseInstance() {
     }
 
-    public CourseInstance(Long id, String year_of_delivery, String semester_of_delivery, String course_id) {
+    public CourseInstance(Long id, String year, String semester, String course_id) {
         this.id = id;
-        this.year_of_delivery = year_of_delivery;
-        this.semester_of_delivery = semester_of_delivery;
+        this.year = year;
+        this.semester = semester;
         this.course_id = course_id;
     }
 
@@ -34,19 +34,19 @@ public class CourseInstance {
     }
 
     public String getYear_of_delivery() {
-        return year_of_delivery;
+        return year;
     }
 
-    public void setYear_of_delivery(String year_of_delivery) {
-        this.year_of_delivery = year_of_delivery;
+    public void setYear_of_delivery(String year) {
+        this.year = year;
     }
 
     public String getSemester_of_delivery() {
-        return semester_of_delivery;
+        return semester;
     }
 
-    public void setSemester_of_delivery(String semester_of_delivery) {
-        this.semester_of_delivery = semester_of_delivery;
+    public void setSemester_of_delivery(String semester) {
+        this.semester = semester;
     }
 
     public String getCourse_id() {
@@ -61,8 +61,8 @@ public class CourseInstance {
     public String toString() {
         return "CourseInstance{" +
                 "id=" + id +
-                ", year_of_delivery='" + year_of_delivery + '\'' +
-                ", semester_of_delivery='" + semester_of_delivery + '\'' +
+                ", year_of_delivery='" + year + '\'' +
+                ", semester_of_delivery='" + semester + '\'' +
                 ", course_id='" + course_id + '\'' +
                 '}';
     }

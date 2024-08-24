@@ -31,14 +31,14 @@ public class CourseInstanceController {
         return "Course instance not saved";
     }
 
-    @GetMapping("/{year_of_delivery}/{semester}")
-    public List<CourseInstance> getInstancesByYearAndSemester(@PathVariable String year_of_delivery, @PathVariable String semester) {
-        return courseInstanceRepository.findByYearAndSemester(year_of_delivery, semester);
+    @GetMapping("/{year}/{semester}")
+    public List<CourseInstance> getInstancesByYearAndSemester(@PathVariable String year, @PathVariable String semester) {
+        return courseInstanceRepository.findByYearAndSemester(year, semester);
     }
 
-    @GetMapping("/{year_of_delivery}/{semester}/{id}")
+    @GetMapping("/{year}/{semester}/{id}")
     public ResponseEntity<CourseInstance> getInstanceById(
-            @PathVariable String year_of_delivery,
+            @PathVariable String year,
             @PathVariable String semester,
             @PathVariable Long id) {
         CourseInstance instance = courseInstanceRepository.findById(id)
@@ -47,8 +47,8 @@ public class CourseInstanceController {
     }
 
 
-    @DeleteMapping("/{year_of_delivery}/{semester}/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteInstance(@PathVariable String year_of_delivery, @PathVariable String semester, @PathVariable Long id) {
+    @DeleteMapping("/{year}/{semester}/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteInstance(@PathVariable String year, @PathVariable String semester, @PathVariable Long id) {
         CourseInstance instance = courseInstanceRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("CourseInstance not found with id " + id));
 
